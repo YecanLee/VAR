@@ -18,3 +18,6 @@ local_output*
 *.log
 *.txt
 *.ipynb
+
+
+generated_images/
