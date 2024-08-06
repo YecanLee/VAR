@@ -6,3 +6,5 @@ numpy
 pytz
 transformers
 typed-argument-parser
+flash-attn
+xformers
