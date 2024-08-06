@@ -132,6 +132,12 @@ You can monitor the training process by checking the logs in `local_output/log.t
 
 If your experiment is interrupted, just rerun the command, and the training will **automatically resume** from the last checkpoint in `local_output/ckpt*.pth` (see [utils/misc.py#L344-L357](utils/misc.py#L344-L357)).
 
+## Generating 50k images with 50 images per class
+run the following command to generate 50k images to reproduce the FiD score claimed in the paper:
+```shell
+python generation_single_gpu.py
+```
+
 ## Sampling & Zero-shot Inference
 
 For FID evaluation, use `var.autoregressive_infer_cfg(..., cfg=1.5, top_p=0.96, top_k=900, more_smooth=False)` to sample 50,000 images (50 per class) and save them as PNG (not JPEG) files in a folder. Pack them into a `.npz` file via `create_npz_from_sample_folder(sample_folder)` in [utils/misc.py#L344](utils/misc.py#L360).
